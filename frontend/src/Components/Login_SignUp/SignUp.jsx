@@ -1,8 +1,6 @@
 import { useState } from "react";
-// import axios,, {isCancel, AxiosError} from 'axios';
-import axios, {isCancel, AxiosError} from 'axios';
 import {  useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import './Auth.css';
 let obj ={
     name : "",
     email : "",
@@ -36,16 +34,17 @@ const handlsSubmit=(e)=>{
 }
 let {name, email, mobile, password} = formData;
   return (
-   <>
-   <h2 >Registration Form</h2>
-     <form action="submit" >
-        <input type="text" name="name" value={name} onChange={handeChange} id="" placeholder="NAME"/>
-        <input type="email" name="email" value={email} onChange={handeChange} placeholder="EMAIL" />
-        <input type="number" name="mobile" value={mobile} onChange={handeChange} placeholder="MOBILE NO." />
-        <input type="password" name="password" value={password} onChange={handeChange} placeholder="PASSWORD" /> <br />
-        <button onClick={handlsSubmit}>Submit</button>
+   <div id="SignupDiv">
+    <form action="submit"  >
+        <label htmlFor=""><span>Name : </span> <input type="text" name="name" value={name} onChange={handeChange} id="" placeholder="NAME"/></label>
+        <label htmlFor=""><span>Email : </span><input type="email" name="email" value={email} onChange={handeChange} placeholder="EMAIL" /></label>
+        <label htmlFor=""><span>Mobile : </span> <input type="mobile" name="mobile" value={mobile} onChange={handeChange} placeholder="MOBILE NO." /></label>
+       <label htmlFor=""><span>Password  : </span> <input type="password" name="password" value={password} onChange={handeChange} placeholder="PASSWORD" /></label>
      </form>
-   </>
+   <button id="submitBtn" onClick={handlsSubmit}>Submit</button>
+   </div>
+   
+   
   );
 
 }

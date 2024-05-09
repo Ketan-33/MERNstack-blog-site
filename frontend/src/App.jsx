@@ -13,7 +13,14 @@ function App() {
   return (
     < div className="App">
             <NavBar />
-      {!isAuth ? <Login/> :
+      {!isAuth ? 
+      <>
+      {/* <Login/> */}
+      <Routes>
+      <Route path='/login' element={<Login />}></Route>
+      <Route path='/signup' element={<SignUp />}></Route>
+      </Routes>
+      </>:
       <Routes>
                <Route path='/' element={<Homepage />}></Route>
                        <Route path='/post/:blogId' element={<BlogDetails />}></Route>
