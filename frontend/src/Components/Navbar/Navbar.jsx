@@ -20,7 +20,7 @@ import { isAuthHandler } from '../Redux/Auth-context/action'
         <div id="leftNav" className="navLinks">
           <Link to="/">Home</Link>
           <Link to="/profile">Profile</Link>
-          <Link to="/Posts">All Posts</Link>
+          <Link to="/create">Create blog</Link>
         </div>
         <div id="rightNav" className="navLinks">
           {isAuth ? <button id="SignOutBtn" onClick={handleSignout}>Sign Out</button> :

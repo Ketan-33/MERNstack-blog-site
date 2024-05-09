@@ -1,14 +1,16 @@
 import AllUsers from "./AllUsers";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import AllBlogs from "./AllBlogs";
 export default function Homepage(){
     const isAuth = useSelector((store) => store.isAuth.isAuth);
     const navigate = useNavigate();
     if(!isAuth) navigate("/login");
     return(
-        <>
+        <div id="blogsDiv">
          <h2>This is Home Page</h2>
-         <AllUsers/>
-        </>
+         
+         <AllBlogs/>
+        </div>
     )
 }
